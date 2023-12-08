@@ -1,28 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>My Restaurant</title>
 </head>
-<header>
-    <nav>
-        <ul>
-            <li>
-                <a>Hallo</a>
-            </li>
-            <li>
-                <a>Welt</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+
 <body>
-    <button>
-        
-    </button>
-    <button>
-        
-    </button>
+
+    <header>
+        <div class="container">
+            <div class="logo">🍽️</div>
+            <div class="title">My Restaurant</div>
+            <nav>
+                <a href="#">Menu</a>
+                <a href="#">Reservations</a>
+                <a href="#">Orders</a>
+                <a href="#" onclick="scrollToContact()">Contact</a>
+            </nav>
+            <div class="menu-icon">&#9776;</div>
+        </div>
+    </header>
+
+    <div class="restaurant-description">
+        <div class="container">
+            <p>Welcome to Delicious Restaurant, where we serve mouthwatering dishes prepared with love and passion. Our
+                menu is a delightful blend of flavors, offering a variety of options for every palate. Whether you're
+                here for a casual meal or a special occasion, we guarantee an unforgettable dining experience.</p>
+            <div class="restaurant-images">
+                <img src="RestaurantBild1.jpg" alt="Interior of the restaurant">
+                <img src="RestaurantBild2.jpg" alt="Exterior of the restaurant">
+            </div>
+        </div>
+    </div>
+
+    <div class="additional-info">
+        <div class="container">
+            <div class="info-item">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday: 11:00 AM - 10:00 PM</p>
+                <p>Saturday - Sunday: 12:00 PM - 11:00 PM</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Special Offers</h3>
+                <p>Join us for Happy Hour every weekday from 4:00 PM to 6:00 PM for half-priced appetizers and drink
+                    specials!</p>
+                <p>Book a table for a special celebration and enjoy a complimentary dessert on us!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="restaurant-feature">
+        <div class="container">
+            <div class="feature-info">
+                <h3>Our Restaurant Ambiance</h3>
+                <p>Experience a warm and inviting atmosphere with stylish decor and comfortable seating. Whether you're
+                    here for a romantic dinner or a casual get-together with friends, our restaurant provides the
+                    perfect setting.</p>
+            </div>
+            <div class="feature-image">
+                <img src="RestaurantBild3.jpg" alt="Ambiance of the restaurant">
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-info" id="contact">
+        <div class="container">
+            <h3>Contact Information:</h3>
+            <p>Address: 123 Main Street, Stuttgart</p>
+            <p>Phone: (160) 123-4567</p>
+            <p>Email: info@myrestaurant.com</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for toggling the mobile navigation menu
+        document.querySelector('.menu-icon').addEventListener('click', function () {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // JavaScript to scroll to the "Contact Information" section
+        function scrollToContact() {
+            var contactSection = document.getElementById('contact');
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
 </body>
+
 </html>
