@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>My Restaurant</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🍽️</div>
+            <div class="title">My Restaurant</div>
+            <nav>
+                <a href="base.html">Menu</a>
+                <a href="#">Reservations</a>
+                <a href="orders.html">Orders</a>
+                <a href="#" onclick="scrollToContact()">Contact</a>
+            </nav>
+            <div class="menu-icon">&#9776;</div>
+        </div>
+    </header>
+
+    <form>
+        <label for="food">Gericht:</label>
+        <select id="food" name="food" required>
+            <option value="pizza">Pizza</option>
+            <option value="burger">Burger</option>
+            <option value="pasta">Pasta</option>
+            <option value="salad">Salad</option>
+        </select>
+
+        <label for="quantity">Menge:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+
+        <label for="notes">Anmerkungen:</label>
+        <textarea id="notes" name="notes" rows="4"></textarea>
+
+        <button type="submit">Bestellung aufgeben</button>
+    </form>
+
+
+    <div class="contact-info" id="contact">
+        <div class="container">
+            <h3>Contact Information:</h3>
+            <p>Address: 123 Main Street, Stuttgart</p>
+            <p>Phone: (160) 123-4567</p>
+            <p>Email: info@myrestaurant.com</p>
+        </div>
+    </div>
+</body>
