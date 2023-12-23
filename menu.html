@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="FoodOrders-0/BOOT-INF/classes/de/dhbw/rh/FoodOrders/entities/Menu.class"></script>
+    <script src="logic.js"></script>
     <title>My Restaurant</title>
 </head>
 
@@ -26,9 +28,7 @@
     <div class="restaurant-description">
         <form>
             <label for="food">Select Menu to be displayed:</label>
-            <select id="food" name="food" required>
-
-            </select>
+            <select id="dropdown" name="food" onclick="erstelleDropdown()" required></select>
 
             <button type="submit">Show Menu</button>
             <button type="submit">Add to Menu</button>
@@ -67,53 +67,6 @@
             <p>Email: info@myrestaurant.com</p>
         </div>
     </div>
-
-    <script>
-        // JavaScript for toggling the mobile navigation menu
-        document.querySelector('.menu-icon').addEventListener('click', function () {
-            document.querySelector('nav').classList.toggle('active');
-        });
-
-        // JavaScript to scroll to the "Contact Information" section
-        function scrollToContact() {
-            var contactSection = document.getElementById('contact');
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        var foodSelect = document.getElementById('food');
-        function fillMenuOptions() {
-
-            var apiUrl = 'GET http://localhost:8080/menus';
-
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    // Menüoptionen aus den API-Daten extrahieren
-                    var menuOptions = data.map(menu => menu.name);
-
-                    // Dropdown-Menü füllen
-                    fillSelectWithOptions(foodSelect, menuOptions);
-                })
-                .catch(error => {
-                    console.error('Error fetching menu data:', error);
-                });
-        }
-
-        function fillSelectWithOptions(selectElement, optionsArray) {
-            // Zuerst vorhandene Optionen löschen
-            selectElement.innerHTML = '';
-
-            optionsArray.forEach(function (option) {
-                var optionElement = document.createElement('option');
-                optionElement.value = option;
-                optionElement.text = option;
-                selectElement.add(optionElement);
-            });
-        }
-
-        fillMenuOptions();
-    </script>
-
 </body>
 
 </html>
