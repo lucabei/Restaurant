@@ -24,21 +24,16 @@ window.onload = function() {
     });
 }
 
-fetch('http://localhost:8080/swagger-ui/index.html')
-.then(response => {
-    // Überprüfe, ob die Anfrage erfolgreich war (Statuscode 200-299)
+fetch('http://localhost:8080/swagger-ui/index.html/menus/')
+  .then(response => {
     if (!response.ok) {
       throw new Error('Netzwerkfehler: ' + response.statusText);
     }
-    // Konvertiere die Antwort in JSON
     return response.json();
   })
   .then(data => {
-    // Hier kannst du mit den Daten arbeiten, die von der API zurückgegeben wurden
     console.log(data);
   })
   .catch(error => {
-    // Behandle Netzwerkfehler oder Fehler während der Verarbeitung
     console.error('Fehler beim Fetchen der Daten:', error);
   });
-
